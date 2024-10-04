@@ -1,0 +1,24 @@
+<select [(ngModel)]="selectedNumber">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+</select>
+
+<button (click)="printTables()">Print Tables</button>
+<!-- Display the tables -->
+<div *ngIf="tables.length > 0">
+  <div *ngFor="let table of tables; let i = index">
+    <h4>Multiplication Table of {{ i + 1 }}</h4>
+    <p *ngFor="let row of table">
+      {{ row }}
+    </p>
+  </div>
+</div>
+

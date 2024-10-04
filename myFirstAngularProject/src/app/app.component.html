@@ -1,0 +1,26 @@
+
+<h1 style="color:brown;">Interpolation</h1>
+<h1>hello</h1>
+<h3>{{title}} This is My Title</h3>
+<h3>my obj {{obj}}</h3>
+<h4>my num value {{num}}</h4>
+<h4>{{arr}}</h4>
+<p>{{isvalid}}</p>
+
+<h1 style="color: brown;">Property Binding</h1>
+<input type="text" value="{{vali}}" [disabled]=wanttodisable> 
+
+<!--for value Interpolation is possible bcoz value is in numeric format
+    for disabled property use property binding bcoz value is in boolean format -->
+
+    <h1 style="color: brown;">Event Binding</h1>
+
+    <button (click)="click()">Click me</button>
+
+    <div (mouseover)="mouseover()" >
+        <p >Lorem ipsum dolor sit amet consectetur.</p>
+    </div>
+
+    <h1 style="color: brown;">Two Way Data Binding</h1>
+    <input type="text" [(ngModel)]="myval">
+    <p>{{myval}}</p>

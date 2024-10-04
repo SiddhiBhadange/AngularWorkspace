@@ -1,0 +1,67 @@
+<div class="feedback-form">
+  <h2>Student Feedback Form</h2>
+  <form #feedbackForm="ngForm" (ngSubmit)="onSubmit(feedbackForm)" novalidate>
+
+    <!-- Student Name -->
+    <div>
+      <label for="studentName">Student Name:</label>
+      <input id="studentName" type="text" [(ngModel)]="studentName" name="studentName" required #nameField="ngModel" />
+      <div *ngIf="nameField.invalid && nameField.touched" class="error">
+        Student Name is required.
+      </div>
+    </div>
+
+    <!-- Batch Number -->
+    <div>
+      <label for="batchNumber">Batch Number:</label>
+      <input id="batchNumber" type="number" [(ngModel)]="batchNumber" name="batchNumber" required
+        #batchField="ngModel" />
+      <div *ngIf="batchField.invalid && batchField.touched" class="error">
+        Batch Number is required.
+      </div>
+    </div>
+
+    <!-- Feedback -->
+    <div>
+      <label for="gender">Gender:</label>
+      <select id="gender" [(ngModel)]="gender" name="gender" required #genderField="ngModel">
+        <option value="" disabled selected>Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <div *ngIf="genderField.invalid && genderField.touched" class="error">
+        Gender is required.
+      </div>
+    </div>
+
+    <div>
+      <label for="age">Age:</label>
+      <input type="number" id="age" [(ngModel)]="age" name="age" required #ageField="ngModel" min="1" />
+      <div *ngIf="ageField.invalid && ageField.touched" class="error">
+        Age is required and must be a positive number.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="feedbackForm.invalid">Submit Feedback</button>
+  </form>
+
+  <h3>Submitted Feedbacks</h3>
+  <table *ngIf="feedbackEntries.length > 0">
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Batch Number</th>
+        <th>Feedback</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of feedbackEntries">
+        <td>{{ entry.studentName }}</td>
+        <td>{{ entry.batchNumber }}</td>
+        <td>{{ entry.gender }}</td>
+        <td>{{entry.age}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

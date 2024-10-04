@@ -1,0 +1,11 @@
+<body [ngClass]="{'Highlight':isHighlight}">
+
+  <h1>Attribute Directives</h1>
+<button (click)="HighlightONOFF()">HighlightON/OFF</button>
+
+<div [ngStyle]="{'font-size': FontSize}">
+  This is Paragraph
+</div>
+<button (click)="increase()">Increase</button>
+<button (click)="decrease()">Decrease</button>
+</body>

@@ -1,0 +1,34 @@
+<button *ngIf="data">sign in</button><br><br>
+<button *ngIf="!data">sign up</button>
+
+<h3>ngfor example</h3>
+
+<ul *ngFor="let i of numbers">
+  <li>{{i}}</li>
+</ul>
+
+<h4>ngfor example2</h4>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>AGE</th>
+  </tr>
+  <tbody *ngFor="let std of students">
+    <tr>
+
+      <td>{{std.id}}</td>
+      <td>{{std.name}}</td>
+      <td>{{std.age}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>ngswitch example</h4>
+<div [ngSwitch]="color">
+<p *ngSwitchCase="'yellow'">Yellow colour</p>
+<p *ngSwitchCase="'pink'">Pink colour</p>
+<p *ngSwitchDefault>Default colour</p>
+</div>
+

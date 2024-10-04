@@ -1,0 +1,31 @@
+<h4>uppercase</h4>
+{{myName | uppercase}}
+<h4>lowercase</h4>
+{{'Siddhi' | lowercase}}
+<h4>title</h4>
+{{'the kiran academy' | titlecase}}
+
+<h4>currency</h4>
+{{amount | currency:'INR'}}
+
+<h4>Decimal pipe</h4>
+{{num |number}}
+<br>
+{{num| number: '1.1-2'}}
+
+<h4>percent</h4>
+{{0.25 | percent}}
+
+<h4>Json Object</h4>
+{{student | json}}
+<br>
+<input type="date" name="birthdate" [(ngModel)]="birthdate">
+<h3>{{birthdate}}</h3>
+<h3>{{birthdate | date}}</h3>
+<h3>{{birthdate | date:'short'}}</h3>
+<h3>{{birthdate | date:'long'}}</h3>
+<h3>{{birthdate | date:'full'}}</h3>
+<h3>{{birthdate | date:'dd/MM/yyyy'}}</h3>
+
+<h4>i18nselect</h4>
+{{gender | i18nSelect:genderMapping}}
